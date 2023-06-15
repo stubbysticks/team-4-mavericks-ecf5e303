@@ -16,7 +16,12 @@ class GameMap:
             return True
 
     def CalculatePosition(self, position: Position, direction: Direction):
-        newyCoordinate = -1
         if (direction == Direction.NORTH):
-            newyCoordinate = position.yCoordinate + 1
-        return Position(position.xCoordinate, newyCoordinate)
+            position.yCoordinate = position.yCoordinate + 1
+        elif (direction == Direction.SOUTH):
+            position.yCoordinate = position.yCoordinate - 1
+        elif (direction == Direction.EAST):
+            position.xCoordinate = position.xCoordinate + 1
+        else: # WEST
+            position.xCoordinate = position.xCoordinate - 1
+        return position
