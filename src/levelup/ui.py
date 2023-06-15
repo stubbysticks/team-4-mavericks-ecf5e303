@@ -19,8 +19,9 @@ class GameApp:
         return response
 
     def create_character(self):
-        character = self.prompt("Enter character name", lambda x: len(x) > 0)
+        character = self.prompt("You chose wisely! What is your name?", lambda x: len(x) > 0)
         self.controller.create_character(character)
+        print("Nice to meet you, {0}! Welcome to the journey of space exploration...".format(character))
 
     def move_loop(self):
         while True:
@@ -75,7 +76,7 @@ class GameApp:
         """
         print (alien)
         print ("\nWelcome, Earthling!\nWe are terribly sorry to hear that your home planet has been decimated by the asteroid. You are welcome to explore our galaxy to find a new home.\n")
-        start = self.prompt("Press any key to continue", lambda x: len(x) > 0)
+        start = self.prompt("Press any key+enter to continue", lambda x: len(x) > 0)
 
 
     def quit(self):
