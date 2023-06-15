@@ -21,3 +21,13 @@ class TestGameMap(TestCase):
         testObj = GameMap()
         testPosition = Position(-1, 0)
         assert testObj.IsPositionValid(testPosition) == False
+
+    def test_isPositionValidForInvalidYCoordinate10(self):
+        testObj = GameMap()
+        testPosition = Position(0, 10)
+        assert testObj.IsPositionValid(testPosition) == False
+
+    def test_isPositionValidForInvalidYCoordinateNeg1(self):
+        testObj = GameMap()
+        testPosition = Position(0, -1)
+        assert testObj.IsPositionValid(testPosition) == False
