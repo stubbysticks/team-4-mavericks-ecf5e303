@@ -15,14 +15,6 @@ class GameMap:
                 col.append(Position(row, column))
             self.positions.append(col)
 
-    def IsPositionValid(self, position: Position):
-        if (position.xCoordinate > self.maxX or position.yCoordinate > self.maxY):
-            return False
-        elif (position.xCoordinate < 0 or position.yCoordinate < 0):
-            return False
-        else:
-            return True
-
     def CalculatePosition(self, position: Position, direction: Direction):
         if (direction == Direction.NORTH and position.yCoordinate < 9):
             return self.positions[position.xCoordinate][position.yCoordinate + 1]
