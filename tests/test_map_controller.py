@@ -41,9 +41,9 @@ class TestGameMap(TestCase):
 
     def test_calculatePositionS(self):
         testObj = GameMap()
-        testPosition = Position(0, 0)
+        testPosition = Position(0, 1)
         newPosition = testObj.CalculatePosition(testPosition, Direction.SOUTH)
-        assert newPosition.yCoordinate == -1
+        assert newPosition.yCoordinate == 0
 
     def test_calculatePositionE(self):
         testObj = GameMap()
@@ -53,6 +53,6 @@ class TestGameMap(TestCase):
 
     def test_calculatePositionW(self):
         testObj = GameMap()
-        testPosition = Position(0, 0)
+        testPosition = Position(1, 0)
         newPosition = testObj.CalculatePosition(testPosition, Direction.WEST)
-        assert newPosition.xCoordinate == -1
+        assert newPosition.xCoordinate == 0
