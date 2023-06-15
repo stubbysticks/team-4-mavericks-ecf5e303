@@ -8,5 +8,7 @@ class GameMap:
     def IsPositionValid(self, position: Position):
         if (position.xCoordinate > self.maxX):
             return False
+        elif (position.xCoordinate < 0):
+            return False
         else:
             return True
