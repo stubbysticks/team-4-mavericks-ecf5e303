@@ -6,7 +6,7 @@ class Position:
         self.xCoordinate = xCoordinate
         self.yCoordinate = yCoordinate
 
-    def get_position(self):
+    def get_position_details(self):
         return (self.xCoordinate, self.yCoordinate)
 
     def set_position(self, xCoordinate, yCoordinate):

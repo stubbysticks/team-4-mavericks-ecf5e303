@@ -16,8 +16,13 @@ class TestCharacterInitWithName(TestCase):
         test_obj = Character(ARBITRARY_NAME)
         ARBITRARY_X = 0
         ARBITRARY_Y = 0
-        self.assertEqual(ARBITRARY_X, test_obj.get_position().get_position()[0])
-        self.assertEqual(ARBITRARY_X, test_obj.get_position().get_position()[1])
+        self.assertEqual(ARBITRARY_X, test_obj.get_position().get_position_details()[0])
+        self.assertEqual(ARBITRARY_X, test_obj.get_position().get_position_details()[1])
+
+    def test_enter_map(self):
+        test_obj = Character(ARBITRARY_NAME)
+        test_obj.enter_map()
+        self.assertIsNotNone(test_obj.gameMap)
 
     # def test_move(self):
     #     test_obj = Character(ARBITRARY_NAME)
