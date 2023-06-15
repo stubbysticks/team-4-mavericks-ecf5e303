@@ -3,7 +3,10 @@ from levelup.position import Position
 
 @dataclass
 class GameMap:
-    x = ""
+    maxX = 9
 
     def IsPositionValid(self, position: Position):
-        return
+        if (position.xCoordinate > self.maxX):
+            return False
+        else:
+            return True

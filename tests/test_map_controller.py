@@ -11,3 +11,8 @@ class TestGameMap(TestCase):
         testObj = GameMap()
         testPosition = Position(0, 0)
         assert testObj.IsPositionValid(testPosition) != ""
+
+    def test_isPositionValidForInvalidXCoordinate10(self):
+        testObj = GameMap()
+        testPosition = Position(10, 0)
+        assert testObj.IsPositionValid(testPosition) == False
