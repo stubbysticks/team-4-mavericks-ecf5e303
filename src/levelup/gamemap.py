@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from levelup.position import Position
+from levelup.controller import Direction
 
 @dataclass
 class GameMap:
@@ -13,3 +14,9 @@ class GameMap:
             return False
         else:
             return True
+
+    def CalculatePosition(self, position: Position, direction: Direction):
+        newyCoordinate = -1
+        if (direction == Direction.NORTH):
+            newyCoordinate = position.yCoordinate + 1
+        return Position(position.xCoordinate, newyCoordinate)

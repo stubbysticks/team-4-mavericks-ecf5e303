@@ -1,6 +1,7 @@
 from unittest import TestCase
 from levelup.gamemap import GameMap
 from levelup.position import Position
+from levelup.controller import Direction
 
 class TestGameMap(TestCase):
     def test_init(self):
@@ -31,3 +32,9 @@ class TestGameMap(TestCase):
         testObj = GameMap()
         testPosition = Position(0, -1)
         assert testObj.IsPositionValid(testPosition) == False
+
+    def test_calculatePositionN(self):
+        testObj = GameMap()
+        testPosition = Position(0, 0)
+        newPosition = testObj.CalculatePosition(testPosition, Direction.NORTH)
+        assert newPosition.yCoordinate == testPosition.yCoordinate + 1
