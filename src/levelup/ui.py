@@ -38,9 +38,45 @@ class GameApp:
             print(self.controller.status)
 
     def start(self):
-        self.create_character()
+        self.start_sequence()
         self.controller.start_game()
+        self.create_character()
         self.move_loop()
+
+    def start_sequence(self):
+        alien = """
+       _..._
+     .'     '.
+    /`\     /`\    |\\
+   (__|     |__)|\  \\  /|
+   (     "     ) \\ || //
+    \         /   \\||//
+     \   _   /  |\|`  /
+      '.___.'   \____/
+       (___)    (___)
+     /`     `\  / /
+    |         \/ /
+    | |     |\  /
+    | |     | "`
+    | |     |
+    | |     |
+    |_|_____|
+   (___)_____)
+   /    \   |
+  /   |\|   |
+ //||\\  Y  |
+|| || \\ |  |
+|/ \\ |\||  |
+    \||__|__|
+     (___|___)
+     /   A   \\
+    /   / \   \\
+   \___/   \___/        
+        """
+        print (alien)
+        print ("\nWelcome, Earthling!\nWe are terribly sorry to hear that your home planet has been decimated by the asteroid. You are welcome to explore our galaxy to find a new home.\n")
+        start = self.prompt("Press any key to continue", lambda x: len(x) > 0)
+
 
     def quit(self):
         print(f"\n\n{self.controller.status}")
