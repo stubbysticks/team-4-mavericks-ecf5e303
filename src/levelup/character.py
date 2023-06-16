@@ -21,7 +21,7 @@ class Character:
         self.position = self.gameMap.positions[0][0]
 
     def move(self, direction):
-        self.gameMap.CalculatePosition(self.position, direction)
+        self.position = self.gameMap.CalculatePosition(self.position, direction)
         self.total_moves = self.total_moves + 1
 
     def get_total_moves(self):

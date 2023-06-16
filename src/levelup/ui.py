@@ -29,7 +29,11 @@ class GameApp:
                 f"Where would you like to go? {VALID_DIRECTIONS}\n(or ctrl+c to quit)",
                 lambda x: x in VALID_DIRECTIONS,
             )
-            direction = Direction(response)
+            if response in VALID_DIRECTIONS:
+                direction = Direction(response)
+            else:
+                print("Direction invalid, please choose again")
+                continue
             try:
                 self.controller.move(direction)
             except InvalidMoveException:
