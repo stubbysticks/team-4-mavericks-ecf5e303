@@ -29,4 +29,4 @@ class Character:
 
     def get_status(self):
         position_details = self.position.get_position_details()
-        return "Your current position is (" + str(position_details[0]) + ", " + str(position_details[1]) + ") and has moved " + str(self.total_moves) + " times."
+        return "Your current position is (" + str(position_details[0]) + ", " + str(position_details[1]) + ") and you have moved " + str(self.total_moves) + " times."

@@ -37,6 +37,7 @@ class GameApp:
                 print("We are sorry you couldn't find a new home. Please enjoy being lost in the void of space.")
                 print("You started on position (0,0).\n")
                 print(self.controller.get_status())
+                print("\n")
                 sys.exit()
             else:
                 print("Direction invalid, please choose again")
