@@ -37,4 +37,10 @@ class TestCharacterInitWithName(TestCase):
         test_obj.enter_map()
         self.assertEqual(0, test_obj.get_total_moves())
 
+    def test_get_status(self):
+        test_obj = Character(ARBITRARY_NAME)
+        test_obj.enter_map()
+        test_character_status = test_obj.get_status()
+        assert test_character_status != None
+        assert test_character_status != ""
         
