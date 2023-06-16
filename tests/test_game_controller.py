@@ -28,3 +28,14 @@ class TestGameController(TestCase):
         testObj.start_game()
         testObj.move(Direction.NORTH)
         self.assertEqual(1, testObj.character.get_position().get_position_details()[1])
+
+    def test_get_status(self):
+        ARBITRARY_NAME = "NAME"
+        testObj = GameController()
+        testObj.create_character(ARBITRARY_NAME)
+        testObj.start_game()
+        test_character_status = testObj.get_status()
+        assert test_character_status != None
+        assert test_character_status != ""
+        assert test_character_status == "Your current position is (0, 0) and has moved 0 times."
+        

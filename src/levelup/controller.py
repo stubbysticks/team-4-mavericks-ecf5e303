@@ -63,4 +63,5 @@ class GameController:
         # testable
         return -10
 
-    
+    def get_status(self):
+        return self.character.get_status()
