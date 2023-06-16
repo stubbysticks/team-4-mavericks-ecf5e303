@@ -1,6 +1,8 @@
 import logging
 from typing import Callable
-from levelup.controller import GameController, Direction, InvalidMoveException
+from levelup.controller import GameController, InvalidMoveException
+from levelup import Direction
+import sys
 
 VALID_DIRECTIONS = [x.value for x in Direction]
 
@@ -26,11 +28,15 @@ class GameApp:
     def move_loop(self):
         while True:
             response = self.prompt(
-                f"Where would you like to go? {VALID_DIRECTIONS}\n(or ctrl+c to quit)",
-                lambda x: x in VALID_DIRECTIONS,
+                f"Where would you like to go? {VALID_DIRECTIONS}\n(or x + enter to quit)",
+                lambda x: x is not None,
             )
             if response in VALID_DIRECTIONS:
                 direction = Direction(response)
+            elif response == "x":
+                print("You started on position (0,0).\n")
+                print(self.controller.get_status())
+                sys.exit()
             else:
                 print("Direction invalid, please choose again")
                 continue
@@ -40,7 +46,7 @@ class GameApp:
                 print(f"You cannot move {direction}")
             else:
                 print(f"You moved {direction.name}")
-            print(self.controller.status)
+            print(self.controller.get_status())
 
     def start(self):
         self.start_sequence()

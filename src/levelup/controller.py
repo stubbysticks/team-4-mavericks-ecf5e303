@@ -65,3 +65,4 @@ class GameController:
 
     def get_status(self):
         return self.character.get_status()
+
