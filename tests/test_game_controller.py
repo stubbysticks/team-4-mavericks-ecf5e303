@@ -37,5 +37,5 @@ class TestGameController(TestCase):
         test_character_status = testObj.get_status()
         assert test_character_status != None
         assert test_character_status != ""
-        assert test_character_status == "Your current position is (0, 0) and has moved 0 times."
+        assert test_character_status == "Your current position is (0, 0) and you have moved 0 times."
         
