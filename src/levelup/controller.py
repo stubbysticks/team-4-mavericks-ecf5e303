@@ -36,8 +36,7 @@ class GameController:
         self.status = GameStatus()
 
     def start_game(self):
-      
-        pass
+        self.character.enter_map()
 
     # Pre-implemented to demonstrate ATDD
     def create_character(self, character_name: str) -> None:

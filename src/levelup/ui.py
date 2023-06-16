@@ -40,8 +40,8 @@ class GameApp:
 
     def start(self):
         self.start_sequence()
-        self.controller.start_game()
         self.create_character()
+        self.controller.start_game()
         self.move_loop()
 
     def start_sequence(self):
