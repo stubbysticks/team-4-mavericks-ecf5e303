@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from levelup.position import Position
-from levelup.controller import Direction
+from levelup import Direction
 
 @dataclass
 class GameMap:

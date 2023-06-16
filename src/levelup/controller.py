@@ -1,9 +1,10 @@
 import logging
 from dataclasses import dataclass
 from enum import Enum
-
+from levelup.character import Character
 
 DEFAULT_CHARACTER_NAME = "Character"
+character = None
 
 #TODO: ADD THINGS YOU NEED FOR STATUS
 @dataclass
@@ -39,12 +40,13 @@ class GameController:
         pass
 
     # Pre-implemented to demonstrate ATDD
-    # TODO: Update this if it does not match your design (hint - it doesnt)
     def create_character(self, character_name: str) -> None:
-        if character_name is not None and character_name != "":
-            self.status.character_name = character_name
-        else:
-            self.status.character_name = DEFAULT_CHARACTER_NAME
+        self.character = Character(character_name)
+
+        # if character_name is not None and character_name != "":
+        #     self.status.character_name = character_name
+        # else:
+        #     self.status.character_name = DEFAULT_CHARACTER_NAME
 
     def move(self, direction: Direction) -> None:
         # TODO: Implement move - should call something on another class

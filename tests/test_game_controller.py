@@ -6,3 +6,8 @@ class TestGameController(TestCase):
         testObj = GameController()
         assert testObj.status != None
         
+    def test_create_character(self):
+        ARBITRARY_NAME = "NAME"
+        testObj = GameController()
+        testObj.create_character(ARBITRARY_NAME)
+        self.assertIsNotNone(testObj.character)
